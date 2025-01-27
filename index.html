@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kushagra Pandey | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-bg: #0d1117;
+      --secondary-bg: #161b22;
+      --accent: #58a6ff;
+      --text-color: #c9d1d9;
+      --muted-text: #6e7681;
+      --card-bg: #1f242b;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: var(--primary-bg);
+      color: var(--text-color);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--primary-bg);
+      color: var(--text-color);
+      padding: 10px 20px;
+      z-index: 100;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--text-color);
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--text-color);
+      transition: 0.3s ease;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--secondary-bg);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 80px 20px;
+      background: linear-gradient(120deg, var(--secondary-bg), var(--primary-bg));
+      color: var(--text-color);
+      text-align: left;
+    }
+
+    #hero img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #hero .hero-text {
+      max-width: 500px;
+    }
+
+    #hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    section p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+      color: var(--muted-text);
+    }
+
+    .section-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* Custom Button */
+    .btn-custom {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: var(--text-color);
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .btn-custom:hover {
+      background-color: #1f80d3;
+      transform: translateY(-2px);
+    }
+
+    .btn-custom:active {
+      background-color: #1f80d3;
+      transform: translateY(0);
+    }
+
+    .btn-custom:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(88, 166, 255, 0.7);
+    }
+
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .skills-list li {
+      background: var(--card-bg);
+      color: var(--text-color);
+      padding: 10px 15px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .skills-list li:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: var(--secondary-bg);
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer .social-icons a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    .scroll-animation {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+
+    .scroll-animation.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      #hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #hero img {
+        margin-bottom: 20px;
+      }
+    }
+
+    .stick-button {
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="./arjav.jpg" alt="Profile Picture" class="header-img">
+        <h1>Arjav jain</h1>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+
+      <nav id="nav-links">
+        <a href="#hero">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+      <button id="theme-switch" class="btn-custom stick-button">
+        <i class="fas fa-sun "></i>
+      </button>
+    </div>
+  </header>
+
+  <section id="hero" class="">
+    <div class="hero-text section-container">
+      <h1>Hello, I'm Arjav Jain</h1>
+      <p>
+        I am a passionate Computer Science and Data Science student at GL Bajaj College, specializing in coding, AI, and
+        web development. With a strong foundation in languages like C, Python, and MySQL, I am dedicated to solving
+        real-world problems and continuously enhancing my technical skills. I thrive on tackling complex challenges and
+        always seek new opportunities to innovate and collaborate.
+      </p>
+
+    </div>
+    <div> <img src="./arjav.jpg" alt="Profile Picture" />
+      <h1>Web Developer</h1>
+    </div>
+  </section>
+
+  <section id="experience" class="scroll-animation">
+    <h1>Experience</h1>
+    <div class="section-container">
+      <div class="card">
+        <h3>AICTE Virtual Internship, Edunet Foundation</h3>
+        <p><strong>Dec 2024 - Jan 2025</strong></p>
+        <p>
+          Built a customer support chatbot for bus bookings using Python and NLP.
+          Integrated TF-IDF vectorization and Logistic Regression for intent recognition, enabling travel detail
+          extraction, fare calculation, and dynamic response generation.
+          Deployed the chatbot with Streamlit for an intuitive user interface.
+        </p>
+
+      </div>
+      <div class="card">
+        <h3>Frontend Developer Intern</h3>
+        <p><strong>Make, Noida</strong> (Feb 2024 - May 2024)</p>
+        <p>
+          Improved the digital manufacturing platform by developing UI
+          components and optimizing performance. Collaborated with designers
+          to ensure seamless user experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="scroll-animation">
+    <h1>Projects</h1>
+    <div class="section-container">
+      <div class="card">
+        <h3>Intent-Based Chatbot</h3>
+        <p>
+          Built an intent-based chatbot using NLP and machine learning techniques, utilizing a Logistic Regression model
+          for intent recognition.
+          Developed a user-friendly interface with Streamlit and enabled dynamic responses based on user input.
+          Implemented conversation history tracking and secure processing of interactions.
+        </p>
+
+        <p>
+          <a class="btn-custom" href="https://github.com/arjavjain5203/NLP_based_Chat_bot" target="_blank">
+            View Project
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>Pustak Ghar:University Notes Platform</h3>
+        <p>
+          Developed a website allowing students to access syllabus and notes
+          based on their branch and year. Currently enhancing its
+          functionality for better user engagement.
+        </p>
+        <p>
+          <a class="btn-custom" href="https://kushagra0333.github.io/pustak-ghar/" target="_blank">
+            View Project
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>My C Library</h3>
+        <p>
+          Demonstrated how to create and use both static and dynamic libraries in C on Windows.
+          Developed a library with a source file and header, and provided a sample program to use the library.
+          Included instructions for compiling and linking static and dynamic libraries, along with a Makefile to
+          automate the process.
+        </p>
+        <p>
+          <a class="btn-custom" href="https://github.com/arjavjain5203/creating_my_own_library" target="_blank">
+            View Project
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>💼 Personal Portfolio</h3>
+        <p>
+          Developed a Personal Portfolio website to showcase my projects, skills, and achievements. The site features a
+          clean design, project highlights, technical skills, and links to connect with me on various platforms.
+        </p>
+        <p>
+          <a class="btn-custom" href="https://github.com/arjavjain5203/portfolio/tree/main" target="_blank">
+            View Project
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>My First Website</h3>
+        <p>
+          Built a simple and beginner-friendly website to explore the fundamentals of web development.
+          The project covers key concepts like HTML structure, CSS styling, and responsive design to ensure the site is
+          functional across different devices.
+        </p>
+        <p>
+          <a class="btn-custom" href="https://github.com/arjavjain5203/my-first-website-/tree/main" target="_blank">
+            View Project
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>🎉 Birthday</h3>
+        <p>
+          Created a simple web-based birthday celebration page with a personalized greeting and interactive elements,
+          perfect for sharing birthday wishes or hosting a virtual celebration.
+          The project explores interactive web development concepts and aims to provide a fun and shareable birthday
+          experience.
+        </p>
+        <p>
+          <a class="btn-custom" href="https://github.com/arjavjain5203/birthday/tree/main" target="_blank">
+            View Project
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>🎬 Netflix Clone</h3>
+        <p>
+          Created a Netflix Clone to replicate the layout and interactive features of Netflix's homepage using HTML,
+          CSS, and JavaScript. The project includes a dynamic carousel and an FAQ section with smooth animations.
+        </p>
+        <a class="btn-custom" href="https://github.com/arjavjain5203/netflix_clone/tree/main" target="_blank">
+          View Project
+        </a>
+        </p>
+      </div>
+      
+      <div class="card">
+        <h3>Student Management System</h3>
+        <p>
+          Developed a student management system to add, modify, and search student records and marks in a school
+          database.
+          The system uses MySQL to store data and provides an interactive command-line interface for managing student
+          information and generating reports.
+          Features include adding new students and marks, modifying records, searching by admission number or name, and
+          generating class-wise reports.
+        </p>
+
+        <a class="btn-custom" href="https://github.com/arjavjain5203/Student-report-card-management-system"
+          target="_blank">
+          View Project
+        </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="scroll-animation">
+    <h1>Skills</h1>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>C Programming</li>
+      <li>Python</li>
+      <li>C++</li>
+      <li>DSA</li>
+      <li>MySql</li>
+      <li>Git</li>
+      <li>Github</li>
+      <li>Proble solveing</li>
+      <li>Rapid learning</li>
+    </ul>
+  </section>
+
+
+  <section id="education" class="scroll-animation">
+    <h1>Education</h1>
+    <div class="section-container">
+      <a href="http://www.kvnoida.edu.in/" target="_blank" class="card">
+        <h3>10th Class</h3>
+        <p>
+          <strong>Kendriya Vidyalaya Noida, Sector 24</strong> (2019 - 2021)
+        </p>
+        <p>Scored great marks in the 10th grade.</p>
+      </a>
+      <a href="http://www.kvnoida.edu.in/" target="_blank" class="card">
+        <h3>12th Class - Science Stream</h3>
+        <p>
+          <strong>Kendriya Vidyalaya Noida, Sector 24</strong> (2021 - 2023)
+        </p>
+        <p>Scored great marks in the 12th grade.</p>
+      </a>
+
+
+
+      <a href="http://ipu.ac.in/" target="_blank" class="card">
+        <h3>B.Tech in Computer Science & Engineering</h3>
+        <p>
+          <strong>GL Bajaj Institute of Technology & Management</strong> (2023
+          - 2027)
+        </p>
+        <p>CGPA: 8.39/10</p>
+      </a>
+
+    </div>
+  </section>
+  <section id="" class="scroll-animation">
+    <h1>Certifications</h1>
+    <div class="section-container">
+      <div class="card">
+        <h3><strong>The Complete 2024 Web Development Bootcamp</strong></h3>
+        <p>
+          Learned HTML, CSS, JavaScript, React.js, Node.js, Bootstrap, and Web3 during this bootcamp.
+        </p>
+        <p>
+          <a class="btn-custom" href="https://www.udemy.com/certificate/UC-b16299ba-9ac0-48ed-b5d3-bc9bec061be2/"
+            target="_blank">
+            View Certificate
+          </a>
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="contact" class="scroll-animation">
+    <h1>Contact</h1>
+    <p><b>Email:</b> arjavjain.jain1942@gmail.com</p>
+    <p><b>Phone:</b> 9310082225</p>
+    <p><b>Address:</b> sector 82, Noida, Uttar Pradesh</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Kushagra Pandey. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://github.com/arjavjain5203" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/arjavjain5203/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:arjavjain.jain1942@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/arjav.jain.5203/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://leetcode.com/u/arjavjain5203/" target="_blank">
+        <i class="fas fa-puzzle-piece"></i> <!-- Example of another relevant icon -->
+      </a>
+
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("scroll", () => {
+      const elements = document.querySelectorAll(".scroll-animation");
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
+      });
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+    /---theme switch -----/
+    document.addEventListener("DOMContentLoaded", () => {
+      const switchButton = document.getElementById("theme-switch");
+      let isDarkTheme = true; // Default is Dark Theme
+
+      const toggleTheme = () => {
+        if (isDarkTheme) {
+          // Switch to Light Theme
+          document.documentElement.style.setProperty("--primary-bg", "#f8f9fa");
+          document.documentElement.style.setProperty("--secondary-bg", "#ffffff");
+          document.documentElement.style.setProperty("--accent", "#007bff");
+          document.documentElement.style.setProperty("--text-color", "#212529");
+          document.documentElement.style.setProperty("--muted-text", "#6c757d");
+          document.documentElement.style.setProperty("--card-bg", "#e9ecef");
+
+          switchButton.innerHTML =
+            '<i class="fas fa-moon"></i>'; // Update icon and text
+        } else {
+          // Switch to Dark Theme
+          document.documentElement.style.setProperty("--primary-bg", "#0d1117");
+          document.documentElement.style.setProperty("--secondary-bg", "#161b22");
+          document.documentElement.style.setProperty("--accent", "#58a6ff");
+          document.documentElement.style.setProperty("--text-color", "#c9d1d9");
+          document.documentElement.style.setProperty("--muted-text", "#6e7681");
+          document.documentElement.style.setProperty("--card-bg", "#1f242b");
+
+          switchButton.innerHTML =
+            '<i class="fas fa-sun"></i>'; // Update icon and text
+        }
+        isDarkTheme = !isDarkTheme; // Toggle theme state
+      };
+
+      // Add click event listener to toggle theme
+      switchButton.addEventListener("click", toggleTheme);
+    });
+
+  </script>
+</body>
+
+</html>
