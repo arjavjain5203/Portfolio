@@ -2,10 +2,6 @@
 
 Welcome to my personal portfolio website! This repository contains the code for my online portfolio where I showcase my skills, projects, and experience.
 
-## Demo
-
-You can view the live version of my portfolio at:  
-[https://arjavjain5203.github.io/Portfolio/](https://arjavjain5203.github.io/Portfolio/)
 
 ## Project Overview
 
